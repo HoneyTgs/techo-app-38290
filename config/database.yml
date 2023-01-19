@@ -20,7 +20,7 @@ development:
   username: root
   password:
   host: localhost
-  database: techo_app_38290_test
+  database: techo_app_38290_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
