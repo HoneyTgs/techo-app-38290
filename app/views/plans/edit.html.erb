@@ -1,0 +1,19 @@
+<div class="contents row">
+  <div class="container">
+    <h3>編集する</h3>
+    <%= form_with(model: @plan, local: true) do |form| %>
+      <p>タイトル</p>
+      <%= form.text_field :title, placeholder: "TITLE" %>
+      <p>画像</p>
+      <%= form.file_field :image %>
+      <p>詳細</p>
+      <%= form.text_area :text, placeholder: "TEXT", rows: "10" %>
+      <p>カテゴリー</p>
+      <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
+<div class='footer'>
+  <%= link_to 'もどる', root_path %>
+</div>

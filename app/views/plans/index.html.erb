@@ -1,2 +1,23 @@
-<h1>Plans#index</h1>
-<p>Find me in app/views/plans/index.html.erb</p>
+<h1> 予定掲示板 </h1>
+<div class='header'>
+  <ul class='right-list'>
+    <% if user_signed_in? %>  
+      <li>こんにちは、<%= link_to current_user.name, "#", class: "user-name" %>さん</li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+    <% else %>  
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+    <% end %> 
+  </ul>  
+</div>  
+<div class='main'>
+  <H2>投稿一覧</h2>
+  <% @plans.each do |plan| %>
+  <p>・<%= link_to plan.title, plan_path(plan.id) %></p>
+  <% end %>
+</div>
+<div class='footer'>
+  <% if user_signed_in? %>  
+  <%= link_to '新しい予定を投稿する', new_plan_path %>
+  <% end %>
+</div>

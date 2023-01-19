@@ -1,0 +1,35 @@
+<div class='header'>
+  ー詳細ページー
+  <% if user = current_user.id == @plan.user_id %>
+    <%= link_to '編集する', edit_plan_path(@plan.id) %>
+    <%= link_to "削除する", plan_path(@plan), method: :delete %>
+  <% end %>
+</div>  
+<div class='main'>
+  <%= @plan.title%>
+    <p>★内容★</p>
+  <%= @plan.text%>
+  <div class="kidoku">
+    <p><%= @read ? '既読' : '未読' %></p>
+  </div>
+  <p>☆コメント欄☆</p>
+  <% if user_signed_in? %>
+    <%= form_with(model: [@plan, @comment], local: true) do |form| %>
+      <%= form.text_area :text, placeholder: "コメント", rows: "2" %>
+      <%= form.submit "送信" %>
+    <% end %>
+  <% end %>
+</div>  
+<div class="comments">
+  <h4>＜コメント一覧＞</h4>
+  <% @comments.each do |comment| %>
+      <%= link_to comment.user.name, "/users/#{comment.user_id}" %>
+      <%= comment.text %>
+      <% if current_user.id == @comment.user_id %>
+      <p><%= link_to "削除する",  plan_comment_path(comment.plan.id, comment.id), method: :delete %></p>
+      <% end %>
+  <% end %>
+</div>
+<div class='footer'>
+  <%= link_to 'もどる', root_path %>
+</div>
