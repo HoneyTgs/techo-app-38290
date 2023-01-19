@@ -1,35 +1,31 @@
 # README
 
-## users テーブル
+アプリケーション名
+techo-app-38290
 
-| Column             | Type   | Options                 |
-| ------------------ | ------ | ----------------------- |
-| name               | string | null: false             |
-| email              | string | null: false unique:true |
-| encrypted_password | string | null: false             |
-| profile            | string | null: false             |
+URL
+https://techo-app-38290.onrender.com
 
-- has_many :plans
-- has_many :comments
+Basic認証
+ID     admin
+PASS   2222
 
-## plans テーブル
+利用方法
+ユーザー登録をし、予定の共有、コメント投稿ができる。
 
-| Column                | Type       | Options                       |
-| --------------------- | ---------- | ----------------------------- |
-| user                  | references | null: false foreign_key: true |
-| title                 | string     | null: false                   |
-| detail                | text       | null: false                   |
-| category_id           | integer    | null: false                   |
- 
-- belongs_to :user
-- has_many   :comments
+アプリケーションを作成した背景
+自分自身、予定は決まった段階でどこかにメモしておかないと後々忘れそうになってしまうから、それを解消できそうなアプリを作ろうと思った。
 
-## comments テーブル
+洗い出した要件
+https://docs.google.com/spreadsheets/d/1GgXHqDqDSzAarV86ytkNyP1x5uan40ycBOp1fRcHLYk/edit#gid=982722306
 
-| Column                | Type       | Options                       |
-| --------------------- | ---------- | ----------------------------- |
-| user                  | references | null: false foreign_key: true |
-| text                  | text       | null: false                   |
- 
-- belongs_to :user
-- has_one    :plan
+データベース設計
+作成中
+
+画面遷移図
+作成中
+
+開発環境
+Ruby on Rails
+
+
