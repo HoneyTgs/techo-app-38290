@@ -61,3 +61,7 @@ gem 'active_hash'
 group :production do
   gem 'pg'
 end
+
+group :development do
+  gem 'rails-erd'
+end
