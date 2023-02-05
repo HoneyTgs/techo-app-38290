@@ -1,9 +1,13 @@
 <div class='header'>
-  ー詳細ページー
+  <div class='peji'>
+  詳細ページ
+  </div>
+  <div class='syousai-hea'>
   <% if user = current_user.id == @plan.user_id %>
     <%= link_to '編集する', edit_plan_path(@plan.id) %>
     <%= link_to "削除する", plan_path(@plan), method: :delete %>
   <% end %>
+  </div>
 </div>  
 <div class='main'>
   <%= @plan.title%>

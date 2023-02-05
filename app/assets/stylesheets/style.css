@@ -1,0 +1,36 @@
+.left-content {
+  justify-content: left;
+}
+
+.main{
+  width: 1400px;
+  margin: auto;
+}
+
+.main-content {
+  color: black;
+}
+
+.peji {
+  color: deepskyblue;
+  font-size: 30px;
+}
+
+.syousai-hea {
+  justify-content: right;
+  padding: 0 170px;
+}
+
+.footer {
+  padding: 50px 10px 10px 300px;
+}
+
+.field{
+  margin: 10px 0;
+  width: 70%;
+}
+
+.kidoku{
+  color: aqua;
+  padding: 0 270px;
+}
