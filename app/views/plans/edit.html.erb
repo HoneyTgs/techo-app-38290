@@ -4,8 +4,6 @@
     <%= form_with(model: @plan, local: true) do |form| %>
       <p>タイトル</p>
       <%= form.text_field :title, placeholder: "TITLE" %>
-      <p>画像</p>
-      <%= form.file_field :image %>
       <p>詳細</p>
       <%= form.text_area :text, placeholder: "TEXT", rows: "10" %>
       <p>カテゴリー</p>

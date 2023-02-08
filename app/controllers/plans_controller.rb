@@ -24,6 +24,7 @@ class PlansController < ApplicationController
   def destroy
     plan = Plan.find(params[:id])
     plan.destroy
+    redirect_to root_path
   end
 
   def edit
